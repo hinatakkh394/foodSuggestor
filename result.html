@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ガチャ</h1>
+        
+        <div id="result"></div>
+    </div>
+    <script>
+        // URLからクエリパラメータを取得して表示
+        const params = new URLSearchParams(window.location.search);
+        const combination = params.get("combination");
+        document.getElementById("result").innerText = `おすすめの品: ${combination}`;
+    </script>
+        <button id="share-btn">
+            結果を共有する
+        </button>
+    </div>
+</body>
+</html>
