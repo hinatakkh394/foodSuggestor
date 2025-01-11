@@ -16,16 +16,10 @@ function getRandomCombination(array, count) {
 }
 
 document.getElementById("share-btn").addEventListener("click", () => {
-    if(navigator.share) {
-        navigator.share(
-            title, 'チェックしてね！',
-            text, 'これが面白い内容です！',   
-        )
-        .then(() => console.log('共有が成功しました！'))
-        .catch((error) => console.error('共有に失敗しました:', error));
-    } else {
-        console.log('Web Share APIはサポートされていません。');
-    }
+   navigator.share({
+       title: "ランチ何にしようかな？",
+       text: "ランダムに組み合わせてみたよ！",
+       url: 'https://hinatakkh394.github.io/foodSuggestor/'
+   });
 });
-
 
