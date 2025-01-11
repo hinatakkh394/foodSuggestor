@@ -18,7 +18,7 @@ if (page === "index.html" || page === "") {
         const shuffled = array.sort(() => 0.5 - Math.random());
         return shuffled.slice(0, count);
     }
-}
+
 
 // `result.html` の処理
 if (page === "result.html") {
