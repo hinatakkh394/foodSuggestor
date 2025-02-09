@@ -39,4 +39,18 @@ document.getElementById("share-btn").addEventListener("click", () => {
 }
 
 }
-
+// Share button functionality for `index.html`
+document.getElementById("share-btn").addEventListener("click", () => {
+    const combination = getRandomCombination(foodItems, 2).join(" + ");
+    if (navigator.share) {
+        navigator.share({
+            title: '江ノ電沿線食べ歩きガチャの結果',
+            text: `おすすめの品: ${combination}`,
+            url: 'https://hinatakkh394.github.io/foodSuggestor/'
+        })
+        .then(() => console.log('共有が成功しました！'))
+        .catch((error) => console.error('共有に失敗しました:', error));
+    } else {
+        console.log('Web Share APIはサポートされていません。');
+    }
+});
